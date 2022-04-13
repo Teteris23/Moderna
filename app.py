@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 
 app=Flask(__name__)
-
+#<meta http-equiv="X-UA-Compatible" content="IE=edge">
 @app.route("/",methods=['GET'])
 def home():
     data=[
