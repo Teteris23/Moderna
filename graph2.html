@@ -30,6 +30,7 @@ new Chart("myChart", {
 
 
 
+
 <p id="demo"></p>
 
 <script>
@@ -62,5 +63,26 @@ new Chart("myChart", {
       }
     }, 1000);
 </script>
+
+
+
+
+
+<h2>Popup</h2>
+
+<div class="popup" onclick="myFunction()">Click me to toggle the popup!
+  <span class="popuptext" id="myPopup">A Simple Popup!</span>
+</div>
+
+<script>
+// When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+
+
+
 </body>
 </html>
