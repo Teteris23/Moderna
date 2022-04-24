@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 
 <head>
@@ -108,6 +108,34 @@
 
           <h2 class="animate__animated animate__fadeInDown">Mūsu dati</h2>
           <p class="animate__animated animate__fadeInUp">*Tabula*</p>
+          <body background="C:\Users\auzin\OneDrive\Desktop\NETAAQUA\ander ze watter.jpeg">
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+            
+            <script>
+            var xValues = [50,60,70,80,90,100,110,120,130,140,150];
+            var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+            
+            new Chart("myChart", {
+              type: "line",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  fill: false,
+                  lineTension: 0,
+                  backgroundColor: "rgb(0, 0, 255)",
+                  borderColor: "rgb(255, 255, 0)",
+                  data: yValues
+                }]
+              },
+              options: {
+                legend: {display: false},
+                scales: {
+                  yAxes: [{ticks: {min: 6, max:16}}],
+                }
+              }
+            });
+            </script>
+            <p id="demo"></p>
           <a href="graph2.html" class="btn-get-started animate__animated animate__fadeInUp">Statistika!</a>
 
           
