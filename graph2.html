@@ -38,45 +38,46 @@ new Chart("myChart", {
 </script>
 <p id="demo"></p>
 
+
+<h2 class="row">Laiks pirms pēdējās barošanas</h2>
+<script>
+  // Set the date we're counting from (pēdējā barošana)(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
+  var countDownDate = new Date("Apr 20, 2022 15:37:25").getTime();
+    
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+    
+    // Get today's date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now and the count down date
+    var distance = -countDownDate +  now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Display the result in the element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+</script>
 <style>
   img {
     width: 100%;
   }
 </style>
+<img src="C:\Users\auzin\OneDrive\Desktop\NETAAQUA\liela fishe.jpeg" alt="HTML5 Icon" width="200" height="300">
   
-  
-<img src="C:\Users\auzin\OneDrive\Desktop\NETAAQUA\liela fishe.jpeg" alt="HTML5 Icon" width="400" height="500">
-  
-<img src="C:\Users\auzin\OneDrive\Desktop\NETAAQUA\yellowwwww fish.jpeg" alt="HTML5 Icon" width="400" height="500">
-<script>
-    // Set the date we're counting from (pēdējā barošana)(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
-    var countDownDate = new Date("Apr 20, 2022 15:37:25").getTime();
-    
-    // Update the count down every 1 second
-    var x = setInterval(function() {
-    
-      // Get today's date and time
-      var now = new Date().getTime();
-    
-      // Find the distance between now and the count down date
-      var distance = -countDownDate +  now;
-    
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-      // Display the result in the element with id="demo"
-      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-      + minutes + "m " + seconds + "s ";
-    
-      // If the count down is finished, write some text
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-      }
-    }, 1000);
-</script>
+<img src="C:\Users\auzin\OneDrive\Desktop\NETAAQUA\yellowwwww fish.jpeg" alt="HTML5 Icon" width="200" height="300">
+
 </body>
 </html>
