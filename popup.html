@@ -27,7 +27,7 @@
   z-index: 1;
   bottom: 125%;
   left: 50%;
-  margin-left: -80px;
+  margin-left: -180px;
 }
 
 /* Popup arrow */
@@ -66,33 +66,24 @@
 <h2>Popup</h2>
 
 
-<div class="popup" onclick="myFunction()">Click me to toggle the popup!
+<div class="popup" onclick="myFunction()">
   <span class="popuptext" id="myPopup">Your fish is in danger!</span>
 </div>
 
-
-
-
 <script>
-var a=0
-setInterval(function(){ 
-    //this code runs every second 
-    a+=1
-    if (a%40){
-        myFunction()
-        
-    }
-
-}, 1000);
+  // When the user clicks on div, open the popup
+  function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
 </script>
 
-
+<!-- Lai palaist popup tikai juzraksta myFunction()-->
 <script>
-    // When the user clicks on div, open the popup
-    function myFunction() {
-      var popup = document.getElementById("myPopup");
-      popup.classList.toggle("show");
-    }
-    </script>
+  setInterval(function(){ 
+      //this code runs every second 
+      myFunction()
+  }, 1000);
+</script>
 </body>
 </html>
