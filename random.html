@@ -1,24 +1,14 @@
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      
-        <title>netaaqua</title>
-      
-      
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
-      
-        
-    </head>
-    <body>
-        <h1>Hello, my name is <span id="name"></span></h1>
-        <script>
-          let name = "Nathan";
-          document.getElementById("name").innerHTML = name;
-        </script>
-      </body>
-</html>
+<html>
+<body>
 
+<p id="one"></p>
+<button onclick="random()">Random</button>
 
+<script>
+ function random(){
 
+document.getElementById("one").innerHTML = Math.floor(Math.random() * 11);
+}
+</script>
+
+</body>

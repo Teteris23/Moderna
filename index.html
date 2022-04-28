@@ -36,9 +36,27 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+<!--Random num geen-->
+
+        <script src="https://randojs.com/1.0.0.js"></script>
+        <script>
+            function showRandomNumber(){
+                document.getElementById("myNumber").innerHTML = rando(5, 10);
+            }
+        </script>
+        <style>
+            #myNumber{
+                font-size:100px;
+                text-align:center;
+                margin:50px auto;
+                font-family:Arial, sans-serif;
+            }
+        </style>
+
+
 </head>
 
-<body>
+<body onload="showRandomNumber();">
 <body background="\\ri.riga.lv\rvvg\Audzekni\kauzins2\My Documents\GitHub\NETAAQUA\ander ze watter.jpeg"></body>
 
   <!-- ======= Header ======= -->
@@ -50,7 +68,100 @@
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>neta aqua</span></a></h1>
 
+          <!-- Popup -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        /* Popup container - can be anything you want */
+        .popup {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        /* The actual popup */
+        .popup .popuptext {
+          visibility: hidden;
+          width: 1060px;
+          background-color: rgb(184, 28, 28);
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 80px 0;
+          position: absolute;
+          z-index: 1;
+          bottom: 125%;
+          top: 320px;
+          left: 50%;
+          margin-left: -375px;
+        }
+
+        /* Popup arrow */
+        .popup .popuptext::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: rgb(184, 28, 28) transparent transparent transparent;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+          visibility: visible;
+          -webkit-animation: fadeIn 0.3s;
+          animation: fadeIn 0.3s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+          from {opacity: 0;} 
+          to {opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+          from {opacity: 0;}
+          to {opacity:1 ;}
+        }
+        </style>
+
+
+
+
+        <div class="popup" onclick="myFunction()">
+          <span class="popuptext" id="myPopup">Your fish is in danger!</span>
+        </div>
+
+        <script>
+          // When the user clicks on div, open the popup
+          function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+          }
+        </script>
+
+        <!-- Lai palaist popup tikai juzraksta myFunction()-->
+        <script>
+          const alarm=false;
+          setInterval(function(){ 
+            if (alarm==true) {
+              myFunction();
+            }
+              //this code runs every second 
+              
+          }, 1000);
+        </script>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="active " href="index.html">Home</a></li>
@@ -61,8 +172,9 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
+      
     </div>
+    
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
@@ -79,7 +191,7 @@
 
 
 
-          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Par mums!</a>
+          <a href="about.html" class="btn-get-started animate__animated animate__fadeInUp">Par mums!</a>
         </div>
       </div>
 
@@ -133,7 +245,7 @@
           <p class="animate__animated animate__fadeInUp">Kārlis, Eduards, Andrējs, Olivers</p>
   
   
-          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Par mums!</a>
+          <a href="about.html" class="btn-get-started animate__animated animate__fadeInUp">Par mums!</a>
         </div>
       </div>
 
@@ -169,11 +281,42 @@
           </table>
 
 
+          <p id="one"></p>
+          <button onclick="random()">Nākotnes dati</button>
 
-          <a href="team.html" class="btn-get-started animate__animated animate__fadeInUp">Par mums!</a>
+          <script>
+          function random(){
+
+          document.getElementById("one").innerHTML = Math.floor(Math.random() * 11);
+          }
+          </script>
+
+
+        <a href="about.html" class="btn-get-started animate__animated animate__fadeInUp">Par mums!</a>
         </div>
 
-    </div>
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+        </a>
+  
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+        </a>
+      <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+      
+
+      <!--Slide 5-->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Komanda</h2>
+
+          <p class="animate__animated animate__fadeInUp">Kārlis, Eduards, Andrējs, Olivers</p>
+  
+  
+          <a href="about.html" class="btn-get-started animate__animated animate__fadeInUp">Par mums!</a>
+        </div>
+      </div>
   </section><!-- End Hero -->
 
   <main id="main">
@@ -223,6 +366,36 @@
 
       </div>
     </section><!-- End Services Section -->
+    <!-- ======= Facts Section ======= -->
+    <section class="facts section-bg" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span>28.04.2022. 09:14</span>
+            <p>Pēdējais merīsanas laiks</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span>28.04.2022. 09:14</span>
+            <p>Pēdējais barosanas laiks</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="23" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Vidējā temp.</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Vidējais PH</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Facts Section -->
 
 
     <!-- ======= Features Section ======= -->
