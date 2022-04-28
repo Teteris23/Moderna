@@ -124,12 +124,16 @@
             popup.classList.toggle("show");
           }
         </script>
-
+        
         <!-- Lai palaist popup tikai juzraksta myFunction()-->
         <script>
+          const alarm=true;
           setInterval(function(){ 
+            if (alarm==true) {
+              myFunction();
+            }
               //this code runs every second 
-              myFunction()
+              
           }, 1000);
         </script>
         <!-- Uncomment below if you prefer to use an image logo -->
