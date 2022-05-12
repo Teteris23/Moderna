@@ -98,7 +98,7 @@
           bottom: 125%;
           top: 320px;
           left: 50%;
-          margin-left: -375px;
+          margin-left: -1025px;
         }
 
         /* Popup arrow */
@@ -133,14 +133,14 @@
         </style>
 
 
-
+<!--Šajā vietā parādās POPUP, kur ir rakstīts, ka zivis dzīvo bīstamos apstākļos un šī programma ir loop-ā un atkārtojās katru sekundi-->
 
         <div class="popup" onclick="myFunction()">
           <span class="popuptext" id="myPopup">Your fish is in danger!</span>
         </div>
 
         <script>
-          // When the user clicks on div, open the popup
+          
           function myFunction() {
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
@@ -149,12 +149,12 @@
 
         <!-- Lai palaist popup tikai juzraksta myFunction()-->
         <script>
-          const alarm=false;
+          const alarm=true;
           setInterval(function(){ 
             if (alarm==true) {
               myFunction();
             }
-              //this code runs every second 
+               
               
           }, 1000);
         </script>
