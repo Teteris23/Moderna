@@ -5,9 +5,9 @@
 <script>
 $(document).ready(function(){
   $.ajax({
-    url: "http://127.0.0.1:5500/data.txt"
+    url: "data.txt"
   }).done(function(response) {
-    $('#data').html(response);
+    $('#data1').html(response);
   });
 });
 </script>
@@ -15,6 +15,7 @@ $(document).ready(function(){
 <body>
 
 
-<div id="data"></p>
+  <div id="data1">
+
 </body>
 </html>

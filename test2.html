@@ -1,0 +1,37 @@
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $.ajax({
+    url: "data.txt"
+  }).done(function(response) {
+    $('#data1').html(response);
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            <div id="data1"></div>
+            let text = "How are you doing today?";
+            const myArray = text.split(" ");
+            var tik=getElementById("data1")
+            const yValues = tik.split(" ");
+
+
+
+
