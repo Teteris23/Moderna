@@ -29,14 +29,39 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Moderna - v4.8.0
-  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-<!--Random num geen-->
+<script>
+    // Set the date we're counting from (pēdējā barošana)(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
+    var countDownDate = new Date("Apr 20, 2022 15:37:25").getTime();
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+    
+      // Find the distance between now and the count down date
+      var distance = -countDownDate +  now;
+    
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+      // Display the result in the element with id="demo"
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+    
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+</script>
+  
+<!--Random num gen-->
+<!--Šis izvēlās random skaitli, no manuāli ievadītas skaitļu diapazonas, atkarībā no iepriekš iegūtajiem datiem-->
 
         <script src="https://randojs.com/1.0.0.js"></script>
         <script>
@@ -73,7 +98,7 @@
           <!-- Popup -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-        /* Popup container - can be anything you want */
+        
         .popup {
           position: relative;
           display: inline-block;
@@ -133,7 +158,7 @@
         </style>
 
 
-<!--Šajā vietā parādās POPUP, kur ir rakstīts, ka zivis dzīvo bīstamos apstākļos un šī programma ir loop-ā un atkārtojās katru sekundi-->
+<!--Šajā vietā parādās POPUP, kur ir rakstīts, ka zivis dzīvo bīstamos apstākļos un šī programma ir loop-ā un atkārtojās katru sekundi...... Šī programma tiek aktivizēta manuāli-->
 
         <div class="popup" onclick="myFunction()">
           <span class="popuptext" id="myPopup">Your fish is in danger!</span>
@@ -149,7 +174,7 @@
 
         <!-- Lai palaist popup tikai juzraksta myFunction()-->
         <script>
-          const alarm=true;
+          const alarm=false;
           setInterval(function(){ 
             if (alarm==true) {
               myFunction();
@@ -382,8 +407,14 @@
             <p>Vidējais PH</p>
           </div>
 
-        </div>
+          <div class="col-lg-3 col-6 text-center">
+            <span><p id="demo">Laiks, kopš pēdējās barošanas</p></span>
+            <p>Vidējais PH</p>
+          </div>
+        
 
+        </div>
+        <h1 id="demo"></h1>
       </div>
     </section><!-- End Facts Section -->
 
@@ -413,7 +444,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h4>Abonumnts</h4>
+            <h4>Abonoments</h4>
             <p>Ja gribi uzzināt vairāk, dod savu kredīt kartes iznformaciju</p>
           </div>
           <div class="col-lg-6">
