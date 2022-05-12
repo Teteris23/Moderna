@@ -98,7 +98,7 @@
           bottom: 125%;
           top: 320px;
           left: 50%;
-          margin-left: -375px;
+          margin-left: -1025px;
         }
 
         /* Popup arrow */
@@ -133,14 +133,14 @@
         </style>
 
 
-
+<!--Šajā vietā parādās POPUP, kur ir rakstīts, ka zivis dzīvo bīstamos apstākļos un šī programma ir loop-ā un atkārtojās katru sekundi-->
 
         <div class="popup" onclick="myFunction()">
           <span class="popuptext" id="myPopup">Your fish is in danger!</span>
         </div>
 
         <script>
-          // When the user clicks on div, open the popup
+          
           function myFunction() {
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
@@ -149,12 +149,12 @@
 
         <!-- Lai palaist popup tikai juzraksta myFunction()-->
         <script>
-          const alarm=false;
+          const alarm=true;
           setInterval(function(){ 
             if (alarm==true) {
               myFunction();
             }
-              //this code runs every second 
+               
               
           }, 1000);
         </script>
@@ -281,12 +281,12 @@
 
 
           <p id="one"></p>
-          <button onclick="random()">Nākotnes dati</button>
+          <a class="btn-get-started animate__animated animate__fadeInUp"  onclick="random()" >Nākotnes dati</a>
 
           <script>
           function random(){
 
-          document.getElementById("one").innerHTML = Math.floor(Math.random() * 22 + 1);
+          document.getElementById("one").innerHTML = Math.floor(Math.random() * 22 + 1 ) + " Grādi pēc C";
           }
           </script>
 
@@ -320,7 +320,7 @@
             <div class="icon-box icon-box-pink">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4 class="title"><a href="">Eduards</a></h4>
-              <img src="bildes\edarts.jpeg" alt="Eduards" style="width:300px;height:400px;">
+              <img src="bildes\edarts.jpeg" alt="Eduards" style="width:250px;height:350px;">
               <p class="description"></p>
             </div>
           </div>
@@ -329,7 +329,7 @@
             <div class="icon-box icon-box-cyan">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4 class="title"><a href="">Kārlis</a></h4>
-              <img src="bildes\karlis.jpeg" alt="Kārlis" style="width:300px;height:400px;">
+              <img src="bildes\karlis.jpeg" alt="Kārlis" style="width:250px;height:350px;">
               <p class="description"></p>
             </div>
           </div>
@@ -338,7 +338,7 @@
             <div class="icon-box icon-box-green">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4 class="title"><a href="">Olivers</a></h4>
-              <img src="bildes\Olivers.jpeg" alt="Olivers" style="width:300px;height:400px;">
+              <img src="bildes\Olivers.jpeg" alt="Olivers" style="width:250px;height:350px;">
               <p class="description">mm</p>
             </div>
           </div>
@@ -347,7 +347,7 @@
             <div class="icon-box icon-box-blue">
               <div class="icon"><i class="bx bx-world"></i></div>
               <h4 class="title"><a href="">Andrejs</a></h4>
-              <img src="bildes\andrejs.jpeg" alt="Andrejs" style="width:300px;height:400px;">
+              <img src="bildes\andrejs.jpeg" alt="Andrejs" style="width:250px;height:350px;">
               <p class="description">mmm</p>
             </div>
           </div>
@@ -413,8 +413,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h4>Our Newsletter</h4>
-            <p>ja grib ta var</p>
+            <h4>Abonumnts</h4>
+            <p>Ja gribi uzzināt vairāk, dod savu kredīt kartes iznformaciju</p>
           </div>
           <div class="col-lg-6">
             <form action="" method="post">
@@ -433,10 +433,8 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Par mums</a></li>
+
             </ul>
           </div>
 
@@ -445,27 +443,23 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>info</h4>
+            <h4>Contact Us</h4>
             <p>
-              kkda agenskalna iela <br>
-              LV<br>
-              RVVG <br><br>
-              <strong>Phone:</strong> 234567890<br>
-              <strong>Email:</strong> karlis@auzins.com<br>
+              <Ri:a>Neta Aqua</Ri:a><br>
+              Rīgas Valsts vācu ģimnāzija<br>
+          
             </p>
 
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>Par Netaaqua</h3>
-            <p>je?</p>
+            <h3>About Neta aqua</h3>
+            <p>Neta aqua ir the best -OskarsBest20</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -480,14 +474,28 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>netaaqua</span></strong>. namiz
+        &copy; Copyright <strong><span>NETA</span></strong>. 
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-        Designed by <a href="https://bootstrapmade.com/">Neta by negudris spidermens</a>
+        Designed by <a href="https://streamlabs.com/hopp1ntv/tip">NETA AQUA made by Negudrais Spidermens</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NETA AQUA made by Negudrais Spidermens</span></strong>. 
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
+        Designed by <a href="https://streamlabs.com/hopp1ntv/tip">NETA AQUA made by Negudrais Spidermens</a>
       </div>
     </div>
   </footer><!-- End Footer -->
