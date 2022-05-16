@@ -3,6 +3,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 
+<!-- dati -->
+<script>
+  // temperatūra
+  var xValues = [50,60,70,80,90,100,110,120,130,140,150];//mērījuma datums/laiks
+  var yValues = [7,8,8,9,9,9,10,11,14,14,15];//mērījuma rezultāts
+  var countDownDate = new Date("Apr 20, 2022 15:37:25").getTime();// Set the date we're counting from (pēdējā barošana)(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
+//pēdējais mērīšanas laiks - 408. līnija
+//pēdējais barošanas laiks - 413. līnija
+</script>
+
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -30,8 +41,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 <script>
-    // Set the date we're counting from (pēdējā barošana)(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
-    var countDownDate = new Date("Apr 20, 2022 15:37:25").getTime();
+//barošanas taimeris
     
     // Update the count down every 1 second
     var x = setInterval(function() {
@@ -83,6 +93,8 @@
 
 <body onload="showRandomNumber();">
 <body background="\\ri.riga.lv\rvvg\Audzekni\kauzins2\My Documents\GitHub\NETAAQUA\ander ze watter.jpeg"></body>
+
+
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
@@ -159,30 +171,29 @@
 
 
 <!--Šajā vietā parādās POPUP, kur ir rakstīts, ka zivis dzīvo bīstamos apstākļos un šī programma ir loop-ā un atkārtojās katru sekundi...... Šī programma tiek aktivizēta manuāli-->
-
         <div class="popup" onclick="myFunction()">
           <span class="popuptext" id="myPopup">Your fish is in danger!</span>
         </div>
 
         <script>
-          
           function myFunction() {
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
           }
         </script>
 
-        <!-- Lai palaist popup tikai juzraksta myFunction()-->
+
+        <!-- Lai palaist popup tikai juzraksta myFunction() ka alarm ir true-->
         <script>
           const alarm=false;
           setInterval(function(){ 
             if (alarm==true) {
               myFunction();
             }
-               
-              
           }, 1000);
         </script>
+
+
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -201,9 +212,12 @@
     
   </header><!-- End Header -->
 
+
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-cntent-center align-items-center">
     <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
 
       <!-- Slide 1 -->
       <div class="carousel-item active">
@@ -213,11 +227,10 @@
           <h2 class="animate__animated animate__fadeInDown">Laipni lūgti <span>NETA AQUA</span></h2>
           <img src="bildes\welcome-icegif-1.gif" alt="" style="width:500px;height:300px;">
 
-
-
           <a href="about.html" class="btn-get-started animate__animated animate__fadeInUp">Par mums!</a>
         </div>
       </div>
+
 
       <!-- Slide 2 -->
       <div class="carousel-item">
@@ -228,10 +241,9 @@
           <body background="bildes\ander ze watter.jpeg">
             <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
             
-            <script>
-            var xValues = [50,60,70,80,90,100,110,120,130,140,150];
-            var yValues = [7,8,8,9,9,9,10,11,14,14,15];
-            
+
+            <div id="data1"></div>
+            <script>            
             new Chart("myChart", {
               type: "line",
               data: {
@@ -252,14 +264,15 @@
               }
             });
             </script>
+
+
             <p id="demo"></p>
           <a href="graph2.html" class="btn-get-started animate__animated animate__fadeInUp">Statistika!</a>
 
-          
-
-          
+  
         </div>
       </div>
+
 
       <!-- Slide 3 -->
       <div class="carousel-item">
@@ -308,9 +321,9 @@
           <p id="one"></p>
           <a class="btn-get-started animate__animated animate__fadeInUp"  onclick="random()" >Nākotnes dati</a>
 
+
           <script>
           function random(){
-
           document.getElementById("one").innerHTML = Math.floor(Math.random() * 22 + 1 ) + " Grādi pēc C";
           }
           </script>
@@ -381,6 +394,9 @@
 
       </div>
     </section><!-- End Services Section -->
+
+
+
     <!-- ======= Facts Section ======= -->
     <section class="facts section-bg" data-aos="fade-up">
       <div class="container">
@@ -399,19 +415,14 @@
 
           <div class="col-lg-3 col-6 text-center">
             <span data-purecounter-start="0" data-purecounter-end="23" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Vidējā temp.</p>
+            <p>Vidējā ūdens temp.</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
             <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Vidējais PH</p>
+            <p>Vidējais  ūdens PH līmenis</p>
           </div>
 
-          <div class="col-lg-3 col-6 text-center">
-            <span><p id="demo">Laiks, kopš pēdējās barošanas</p></span>
-            <p>Vidējais PH</p>
-          </div>
-        
 
         </div>
         <h1 id="demo"></h1>
@@ -422,20 +433,12 @@
     <!-- ======= Features Section ======= -->
     <section class="features">
       <div class="container">
-
-        
-
-        
-
-        
-        
-
-        
-
       </div>
     </section><!-- End Features Section -->
 
+
   </main><!-- End #main -->
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
