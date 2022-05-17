@@ -3,6 +3,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 
+<!-- dati -->
+<script>
+  // temperatūra
+  var xValues = ["5:06","5:07", "5:08","5:09"];//mērījuma datums/laiks
+  var yValues = [23.5, 23,24.2,23.1,24];//mērījuma rezultāts
+  var countDownDate = new Date("Apr 20, 2022 15:37:25").getTime();// Set the date we're counting from (pēdējā barošana)(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
+//pēdējais mērīšanas laiks - 408. līnija
+//pēdējais barošanas laiks - 413. līnija
+</script>
+
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -29,14 +40,38 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Moderna - v4.8.0
-  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-<!--Random num geen-->
+<script>
+//barošanas taimeris
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+    
+      // Find the distance between now and the count down date
+      var distance = -countDownDate +  now;
+    
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+      // Display the result in the element with id="demo"
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+    
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+</script>
+  
+<!--Random num gen-->
+<!--Šis izvēlās random skaitli, no manuāli ievadītas skaitļu diapazonas, atkarībā no iepriekš iegūtajiem datiem-->
 
         <script src="https://randojs.com/1.0.0.js"></script>
         <script>
@@ -59,6 +94,8 @@
 <body onload="showRandomNumber();">
 <body background="\\ri.riga.lv\rvvg\Audzekni\kauzins2\My Documents\GitHub\NETAAQUA\ander ze watter.jpeg"></body>
 
+
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex justify-content-between align-items-center">
@@ -73,7 +110,7 @@
           <!-- Popup -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-        /* Popup container - can be anything you want */
+        
         .popup {
           position: relative;
           display: inline-block;
@@ -98,7 +135,7 @@
           bottom: 125%;
           top: 320px;
           left: 50%;
-          margin-left: -375px;
+          margin-left: -1025px;
         }
 
         /* Popup arrow */
@@ -133,31 +170,30 @@
         </style>
 
 
-
-
+<!--Šajā vietā parādās POPUP, kur ir rakstīts, ka zivis dzīvo bīstamos apstākļos un šī programma ir loop-ā un atkārtojās katru sekundi...... Šī programma tiek aktivizēta manuāli-->
         <div class="popup" onclick="myFunction()">
           <span class="popuptext" id="myPopup">Your fish is in danger!</span>
         </div>
 
         <script>
-          // When the user clicks on div, open the popup
           function myFunction() {
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
           }
         </script>
 
-        <!-- Lai palaist popup tikai juzraksta myFunction()-->
+
+        <!-- Lai palaist popup tikai juzraksta myFunction() ka alarm ir true-->
         <script>
           const alarm=false;
           setInterval(function(){ 
             if (alarm==true) {
               myFunction();
             }
-              //this code runs every second 
-              
           }, 1000);
         </script>
+
+
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -176,9 +212,12 @@
     
   </header><!-- End Header -->
 
+
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-cntent-center align-items-center">
     <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
 
       <!-- Slide 1 -->
       <div class="carousel-item active">
@@ -188,25 +227,24 @@
           <h2 class="animate__animated animate__fadeInDown">Laipni lūgti <span>NETA AQUA</span></h2>
           <img src="bildes\welcome-icegif-1.gif" alt="" style="width:500px;height:300px;">
 
-
-
           <a href="about.html" class="btn-get-started animate__animated animate__fadeInUp">Par mums!</a>
         </div>
       </div>
+
 
       <!-- Slide 2 -->
       <div class="carousel-item">
         <div class="carousel-container">
 
-          <h2 class="animate__animated animate__fadeInDown">Laipni lūgti <span>NETA AQUA</span></h2>
+          <!-- <h2 class="animate__animated animate__fadeInDown">Laipni lūgti <span>NETA AQUA</span></h2> -->
           <p class="animate__animated animate__fadeInUp"></p>
           <body background="bildes\ander ze watter.jpeg">
             <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
             
-            <script>
-            var xValues = [50,60,70,80,90,100,110,120,130,140,150];
-            var yValues = [7,8,8,9,9,9,10,11,14,14,15];
-            
+
+            <p>Ūdens temperatūra</p>
+            <div id="data1"></div>
+            <script>            
             new Chart("myChart", {
               type: "line",
               data: {
@@ -216,25 +254,35 @@
                   lineTension: 0,
                   backgroundColor: "rgb(0, 0, 255)",
                   borderColor: "rgb(255, 255, 0)",
-                  data: yValues
+                  data: yValues,
+                  
                 }]
               },
               options: {
                 legend: {display: false},
+                title: {
+                  display: true,
+                  text: "Ūdens temperatūra",
+                  fontSize: 16
+                  
+                },
                 scales: {
-                  yAxes: [{ticks: {min: 6, max:16}}],
+                  yAxes: [{ticks: {min: 22, max:25}}],
                 }
               }
             });
             </script>
+            <div class="col-lg-3 col-6 text-center">
+              <p>Laiks kopš pēdējās mērīšanas</p>
+            </div>
+
             <p id="demo"></p>
           <a href="graph2.html" class="btn-get-started animate__animated animate__fadeInUp">Statistika!</a>
 
-          
-
-          
+  
         </div>
       </div>
+
 
       <!-- Slide 3 -->
       <div class="carousel-item">
@@ -280,13 +328,13 @@
           </table>
 
 
-          <p id="one"></p>
-          <button onclick="random()">Nākotnes dati</button>
+          <h2 id="one"></h2>
+          <a class="btn-get-started animate__animated animate__fadeInUp"  onclick="random()" >Nākotnes dati</a>
+
 
           <script>
           function random(){
-
-          document.getElementById("one").innerHTML = Math.floor(Math.random() * 22 + 1);
+          document.getElementById("one").innerHTML = Math.floor(Math.random() * 22 + 1 ) + " Grādi pēc C";
           }
           </script>
 
@@ -320,7 +368,7 @@
             <div class="icon-box icon-box-pink">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4 class="title"><a href="">Eduards</a></h4>
-              <img src="bildes\edarts.jpeg" alt="Eduards" style="width:300px;height:400px;">
+              <img src="bildes\edarts.jpeg" alt="Eduards" style="width:250px;height:350px;">
               <p class="description"></p>
             </div>
           </div>
@@ -329,7 +377,7 @@
             <div class="icon-box icon-box-cyan">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4 class="title"><a href="">Kārlis</a></h4>
-              <img src="bildes\karlis.jpeg" alt="Kārlis" style="width:300px;height:400px;">
+              <img src="bildes\karlis.jpeg" alt="Kārlis" style="width:250px;height:350px;">
               <p class="description"></p>
             </div>
           </div>
@@ -338,7 +386,7 @@
             <div class="icon-box icon-box-green">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4 class="title"><a href="">Olivers</a></h4>
-              <img src="bildes\Olivers.jpeg" alt="Olivers" style="width:300px;height:400px;">
+              <img src="bildes\Olivers.jpeg" alt="Olivers" style="width:250px;height:350px;">
               <p class="description">mm</p>
             </div>
           </div>
@@ -347,7 +395,7 @@
             <div class="icon-box icon-box-blue">
               <div class="icon"><i class="bx bx-world"></i></div>
               <h4 class="title"><a href="">Andrejs</a></h4>
-              <img src="bildes\andrejs.jpeg" alt="Andrejs" style="width:300px;height:400px;">
+              <img src="bildes\andrejs.jpeg" alt="Andrejs" style="width:250px;height:350px;">
               <p class="description">mmm</p>
             </div>
           </div>
@@ -356,6 +404,9 @@
 
       </div>
     </section><!-- End Services Section -->
+
+
+
     <!-- ======= Facts Section ======= -->
     <section class="facts section-bg" data-aos="fade-up">
       <div class="container">
@@ -374,16 +425,17 @@
 
           <div class="col-lg-3 col-6 text-center">
             <span data-purecounter-start="0" data-purecounter-end="23" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Vidējā temp.</p>
+            <p>Vidējā ūdens temp.</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
             <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Vidējais PH</p>
+            <p>Vidējais  ūdens PH līmenis</p>
           </div>
 
-        </div>
 
+        </div>
+        <h1 id="demo"></h1>
       </div>
     </section><!-- End Facts Section -->
 
@@ -391,20 +443,12 @@
     <!-- ======= Features Section ======= -->
     <section class="features">
       <div class="container">
-
-        
-
-        
-
-        
-        
-
-        
-
       </div>
     </section><!-- End Features Section -->
 
+
   </main><!-- End #main -->
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
@@ -413,8 +457,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h4>Our Newsletter</h4>
-            <p>ja grib ta var</p>
+            <h4>Abonoments</h4>
+            <p>Ja gribi uzzināt vairāk, dod savu kredīt kartes iznformaciju</p>
           </div>
           <div class="col-lg-6">
             <form action="" method="post">
@@ -433,10 +477,8 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Par mums</a></li>
+
             </ul>
           </div>
 
@@ -445,27 +487,23 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>info</h4>
+            <h4>Contact Us</h4>
             <p>
-              Āgenskalna iela 21, Kurzemes rajons, Rīga, LV-1048 <br>
-              LV<br>
-              RVVG <br><br>
-              <strong>Phone:</strong> 234567890<br>
-              <strong>Email:</strong> karlis@auzins.com<br>
+              <Ri:a>Neta Aqua</Ri:a><br>
+              Rīgas Valsts vācu ģimnāzija<br>
+          
             </p>
 
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>Par Netaaqua</h3>
-            <p>je?</p>
+            <h3>About Neta aqua</h3>
+            <p>Neta aqua ir the best -OskarsBest20</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -480,14 +518,28 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>netaaqua</span></strong>. namiz
+        &copy; Copyright <strong><span>NETA</span></strong>. 
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-        Designed by <a href="https://bootstrapmade.com/">Neta by negudris spidermens</a>
+        Designed by <a href="https://streamlabs.com/hopp1ntv/tip">NETA AQUA made by Negudrais Spidermens</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NETA AQUA made by Negudrais Spidermens</span></strong>. 
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
+        Designed by <a href="https://streamlabs.com/hopp1ntv/tip">NETA AQUA made by Negudrais Spidermens</a>
       </div>
     </div>
   </footer><!-- End Footer -->
