@@ -6,8 +6,8 @@
 <!-- dati -->
 <script>
   // temperatūra
-  var xValues = [50,60,70,80,90,100,110,120,130,140,150];//mērījuma datums/laiks
-  var yValues = [7,8,8,9,9,9,10,11,14,14,15];//mērījuma rezultāts
+  var xValues = ["5:06","5:07", "5:08","5:09"];//mērījuma datums/laiks
+  var yValues = [23.5, 23,24.2,23.1,24];//mērījuma rezultāts
   var countDownDate = new Date("Apr 20, 2022 15:37:25").getTime();// Set the date we're counting from (pēdējā barošana)(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
 //pēdējais mērīšanas laiks - 408. līnija
 //pēdējais barošanas laiks - 413. līnija
@@ -236,12 +236,13 @@
       <div class="carousel-item">
         <div class="carousel-container">
 
-          <h2 class="animate__animated animate__fadeInDown">Laipni lūgti <span>NETA AQUA</span></h2>
+          <!-- <h2 class="animate__animated animate__fadeInDown">Laipni lūgti <span>NETA AQUA</span></h2> -->
           <p class="animate__animated animate__fadeInUp"></p>
           <body background="bildes\ander ze watter.jpeg">
             <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
             
 
+            <p>Ūdens temperatūra</p>
             <div id="data1"></div>
             <script>            
             new Chart("myChart", {
@@ -253,20 +254,29 @@
                   lineTension: 0,
                   backgroundColor: "rgb(0, 0, 255)",
                   borderColor: "rgb(255, 255, 0)",
-                  data: yValues
+                  data: yValues,
+                  
                 }]
               },
               options: {
                 legend: {display: false},
+                title: {
+                  display: true,
+                  text: "Ūdens temperatūra",
+                  fontSize: 16
+                  
+                },
                 scales: {
-                  yAxes: [{ticks: {min: 6, max:16}}],
+                  yAxes: [{ticks: {min: 22, max:25}}],
                 }
               }
             });
             </script>
+            <div class="col-lg-3 col-6 text-center">
+              <p>Laiks kopš pēdējās mērīšanas</p>
+            </div>
 
-            <h2>Laiks kopš pēdējās mērīšanas</h2>
-            <h2 id="demo">Laiks kopš pēdējās mērīšanas</h2>
+            <p id="demo"></p>
           <a href="graph2.html" class="btn-get-started animate__animated animate__fadeInUp">Statistika!</a>
 
   
